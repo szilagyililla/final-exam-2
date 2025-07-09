@@ -1,8 +1,8 @@
-import NavBar from "./components/NavBar";
+import NavBar from "../components/NavBar";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import CoursePage from "./components/CoursePage";
-import CreatePage from "./pages/CreatePage";
+import HomePage from "../pages/HomePage";
+import CoursePage from "../components/CoursePage";
+import CreatePage from "../pages/CreatePage";
 
 function App() {
   return (
