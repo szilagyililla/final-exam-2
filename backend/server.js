@@ -8,7 +8,8 @@ dotenv.config();
 const app = express()
 const PORT = process.env.PORT || 5000;
 
-app.use("/api/course", courseRoutes);
+app.use(express.json())
+app.use("/api/courses", courseRoutes);
 
 app.listen(PORT, () => {
     connectDB();

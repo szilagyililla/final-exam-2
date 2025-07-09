@@ -19,12 +19,10 @@ const courseSchema = new mongoose.Schema(
         price: {
             type: Number,
             required: true,
-            enum: 'EUR',
         },
         duration: {
             type: Number,
             required: true,
-            enum: 'h',
         },
         level: {
             type: String,
@@ -38,14 +36,6 @@ const courseSchema = new mongoose.Schema(
         available: {
             type: Boolean,
             required: true,
-        },
-        createdAt: {
-            type: Date,
-            required: true,
-        },
-        updatedAt: {
-          type: Date,
-          required: true,
         },
     },
     {

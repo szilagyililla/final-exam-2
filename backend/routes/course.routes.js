@@ -5,14 +5,14 @@ import {
     createCourse,
     deleteExistingCourse,
     updateExistingCourse
- } from "./controllers/course.controllers.js"
+ } from "../controllers/course.controllers.js"
 
  const router = express.Router()
 
-router.get("/all", getAllCourses)
+router.get("/", getAllCourses)
 router.get("/:id", getCourseById)
-router.post("/create", createCourse)
-router.put("/update/:id", updateExistingCourse)
-router.delete("/delete/:id", deleteExistingCourse)
+router.post("/", createCourse)
+router.put("/:id", updateExistingCourse)
+router.delete("/:id", deleteExistingCourse)
 
 export default router

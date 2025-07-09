@@ -20,9 +20,6 @@ export const getAllCourses = async (req, res) => {
     try {
         const courses = await Course.find();
 
-        if (courses.length === 0) {
-            res.status(404).json ({ message: "Cannot find courses." })
-        }
         res.status(200).json(courses);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -39,23 +36,24 @@ export const createCourse = async (req, res) => {
         duration,
         level,
         isOnline,
-        available,
-        createdAt,
-        updatedAt
+        available
     } = req.body;
+console.log(req.body);
 
     if (
         !title ||
         !category ||
         !instructor ||
-        !price ||
-        !duration ||
+        price === null||
+        duration === null ||
         !level ||
         isOnline === undefined ||
         available === undefined
     ) {
         return res.status(400).json({ message: "All fields are required!" });
     }
+    console.log(title);
+    
 
     try {
         const newCourse = new Course({
@@ -66,9 +64,7 @@ export const createCourse = async (req, res) => {
             duration,
             level,
             isOnline,
-            available,
-            createdAt,
-            updatedAt
+            available
         });
         const savedCourse = await newCourse.save();
         res.status(201).json(savedCourse);
@@ -88,17 +84,15 @@ export const updateExistingCourse = async (req, res) => {
         duration,
         level,
         isOnline,
-        available,
-        createdAt,
-        updatedAt
+        available
     } = req.body;
 
     if (
         !title ||
         !category ||
         !instructor ||
-        !price ||
-        !duration ||
+        price === null ||
+        duration === null ||
         !level ||
         isOnline === undefined ||
         available === undefined
@@ -117,9 +111,7 @@ export const updateExistingCourse = async (req, res) => {
                 duration,
                 level,
                 isOnline,
-                available,
-                createdAt,
-                updatedAt
+                available
             },
             { new: true }
         );

@@ -70,7 +70,7 @@ An application to manage programming courses, where new courses can be added to 
     "isOnline": true,
     "available": false
   },
-  {
+ {
     "title": "Python for Data Science",
     "category": "Data Science",
     "instructor": "David Wilson",
@@ -146,7 +146,7 @@ An application to manage programming courses, where new courses can be added to 
 
 ---
 
-## 6⃣️ CoursePage & Card Updates
+## 6⃣️  CoursePage & Card Updates
 
 - Each `CourseCard` should have:
 
